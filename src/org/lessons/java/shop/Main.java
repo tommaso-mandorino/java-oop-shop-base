@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         
-        Prodotto prodotto1 = new Prodotto();
+        Product product1 = new Product();
 
-        System.out.println(prodotto1.codice);
+        System.out.println(product1.code);
 
     }
 
