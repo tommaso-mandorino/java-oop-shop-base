@@ -1,5 +1,7 @@
 package org.lessons.java.shop;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 public class Product {
@@ -7,10 +9,10 @@ public class Product {
     int code;
     String name;
     String description;
-    float price;
-    int vat;
+    BigDecimal price;
+    BigDecimal vat;
 
-    Product(String name, String description, float price, int vat) {
+    Product(String name, String description, BigDecimal price, BigDecimal vat) {
 
         Random random = new Random();
         this.code = random.nextInt(5001) + 1;
@@ -25,13 +27,13 @@ public class Product {
         return this.code;
     }
 
-    float getBasePrice() {
-        return this.price;
+    BigDecimal getBasePrice() {
+        return this.price.setScale(2, RoundingMode.HALF_DOWN);
     }
 
-    float getFinalPrice() {
-        float productVat = this.price / 100 * this.vat;
-        return this.price + productVat;
+    BigDecimal getFinalPrice() {
+        BigDecimal productVat = this.price.divide(new BigDecimal(100)).multiply(this.vat);
+        return this.price.add(productVat).setScale(2, RoundingMode.HALF_DOWN);
     }
 
     String getExtendedName() {
