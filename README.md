@@ -18,3 +18,13 @@
     - il prodotto esponga un **metodo** per avere il `nome esteso`, ottenuto concatenando **codice-nome**.
 
 3) Nello stesso **package** aggiungere una **classe** `Main` con **metodo** `main` nella quale **testare** tutte le funzionalità della **classe** `Prodotto`.
+
+## Parte 2
+
+Usare opportunamente i **livelli di accesso** (`public`, `private`), i `costruttori`, i metodi `getter` e `setter` ed **eventuali** altri **metodi di "utilità"** per fare in modo che:
+
+- esistano **almeno due `costruttori` diversi**;
+
+- il `codice prodotto` sia **accessibile solo in lettura**;
+
+- gli `altri attributi` siano **accessibili sia in lettura che in scrittura**.
