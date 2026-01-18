@@ -13,11 +13,11 @@ public class Product {
     private BigDecimal price;
     private BigDecimal vat;
 
-    Product() {
+    public Product() {
         System.out.println("This is the test of the constructor with no parameters.");
     }
 
-    Product(String name, String brand, String description, BigDecimal price, BigDecimal vat) {
+    public Product(String name, String brand, String description, BigDecimal price, BigDecimal vat) {
 
         Random random = new Random();
         this.code = random.nextInt(5001) + 1;
@@ -29,48 +29,48 @@ public class Product {
         this.vat = vat;
     }
 
-    String getName() {
+    public String getName() {
         return this.name;
     }
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    String getBrand() {
+    public String getBrand() {
         return this.brand;
     }
-    void setBrand(String brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 
-    String getDescription() {
+    public String getDescription() {
         return this.description;
     }
-    void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    BigDecimal getVat() {
+    public BigDecimal getVat() {
         return this.vat;
     }
-    void setVat(BigDecimal vat) {
+    public void setVat(BigDecimal vat) {
         this.vat = vat;
     }
 
-    int getCode() {
+    public int getCode() {
         return this.code;
     }
 
-    BigDecimal getBasePrice() {
+    public BigDecimal getBasePrice() {
         return this.price.setScale(2, RoundingMode.HALF_DOWN);
     }
 
-    BigDecimal getFinalPrice() {
+    public BigDecimal getFinalPrice() {
         BigDecimal productVat = this.price.divide(new BigDecimal(100)).multiply(this.vat);
         return this.price.add(productVat).setScale(2, RoundingMode.HALF_DOWN);
     }
 
-    String getExtendedName() {
+    public String getExtendedName() {
         return this.name + "-" + this.code;
     }
 
