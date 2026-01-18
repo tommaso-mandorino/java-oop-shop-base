@@ -7,11 +7,11 @@ import java.util.Random;
 public class Product {
 
     private int code;
-    String name;
-    String brand;
-    String description;
-    BigDecimal price;
-    BigDecimal vat;
+    private String name;
+    private String brand;
+    private String description;
+    private BigDecimal price;
+    private BigDecimal vat;
 
     Product() {
         System.out.println("This is the test of the constructor with no parameters.");
